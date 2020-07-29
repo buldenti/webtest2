@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.5rem;
+  text-align: center;
+  min-width: 400px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 1rem 0;
+}
+
+p {
+  margin: 0;
+  padding: 1rem;
+  text-align: left;
+  max-width: 75ch;
+}
+
+#header-nav {
+  padding: 0; /* add or remove padding on mobile */
+  border-bottom: #fff 5px solid;
+}
+
+#header-nav ul,
+#footer-nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat (4, 1fr); /* 4 column grid for nave menu - change to accomodate more items */
+  grid-gap: 0; /* use if you want space bewteen the nav li items */
+  padding: 0; /* needed to remove default ul left padding */
+  margin: 0; /* removes default margin */
+  align-items: center;
+  line-height: 1rem;
+}
+
+.nav-item {
+  background-color: rgb(199, 113, 199);
+}
+
+#footer-nav .nav-item {
+  background: #fff;
+}
+
+#footer-nav {
+  border-top: #000 5px solid;
+}
+
+.header-nav-full-width,
+.footer-nav-full-width {
+  grid-column: 1 / 5; /* sets the home menu item to 4 grid columns wide */
+}
+
+.nav-logo {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+#header-nav ul li a,
+#footer-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block; /* keeps from collapsing when stacked in vertical column */
+  padding: 0.5rem; /* padds out the nav items from the link text */
+  width: 100%; /* keeps the links the same size as the li */
+
+  text-transform: uppercase; /* make nav link text all caps with CSS */
+  font-weight: bold;
+  text-align: center;
+}
+
+#footer-nav ul li a {
+  font-weight: normal;
+  color: #000; /* overide color above so footer is black color text */
+}
+
+#footer-nav ul li a:hover {
+  color: #fff;
+  background-color: rgb(199, 113, 199);
+  transition: all ease-in-out 0.5s;
+}
+
+#header-nav ul li a:hover {
+  color: rgb(0, 0, 0);
+  background-color: #fff;
+  transition: all ease-in-out 0.5s;
+}
+
+#header-nav ul li a:active {
+  color: rgb(255, 0, 0);
+  background-color: rgb(217, 255, 0);
+  transition: all ease-in-out 0.2s;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-areas: "hero";
+  justify-items: center; /* horizontal alignment of .hero-grid */
+  align-items: start; /* vertical alignment of .hero-grid */
+  min-height: 100vh; /* set to % of vertical height, 100vh for full screen */
+  background-color: rgba(199, 113, 199, 0.5); /* background color of the .hero-grid containter */
+  overflow: hidden;
+}
+
+.hero-grid #header-nav {
+  align-self: start;
+}
+
+.hero-grid > * {
+  grid-area: hero; /*gives all children of hero-grid the grid area hero */
+}
+
+.hero-grid img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+/* with space selects .hero-box if it is a decendent of .hero-grid */
+.hero-grid .hero-box {
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+}
+
+.hero-grid .hero-box h1 {
+  font-size: 6rem;
+  line-height: 6rem;
+  font-weight: 500;
+  margin: auto 0;
+}
+
+.hero-grid .hero-box p {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.hero-button {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none; /* removes the underline */
+  background-color: #fff;
+  color: #000;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.25em 0.75em;
+  text-align: center;
+  line-height: 1.1;
+  transition: 250ms all ease-in-out;
+}
+.hero-button:hover,
+.hero-button:active {
+  background-color: #e7f9f3;
+}
+.hero-button:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  box-shadow: 0 0 0 4px #000;
+}
+
+/* mobile column styles */
+.one-column,
+.two-column,
+.three-column,
+.four-column {
+  display: grid;
+  margin: 0;
+  grid-gap: 0.5rem;
+  padding: 1rem 0;
+  grid-template-columns: 1fr;
+}
+
+.one-column > *,
+.two-column > *,
+.three-column > *,
+.four-column > * {
+  display: grid;
+  justify-items: center;
+}
+
+.filler {
+  min-height: 100px;
+}
+
+a img:hover {
+  opacity: 0.5; /* transparency effect for image links */
+  transition: 250ms all ease-in-out;
+}
+
+.social i {
+  color: #000;
+}
+
+.social a {
+  padding: 0.5rem;
+}
+
+.social a i:hover {
+  color: rgba(199, 113, 199);
+}
+
+.footer-copyright {
+  margin: 0 auto;
+  text-align: center;
+}
+
+footer {
+  padding-bottom: 6rem;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 16.5px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+
+  #header-nav ul {
+    grid-template-columns: repeat(6, 1fr);
+    line-height: 2rem; /* keeps nav links vertically centered when in one row */
+  }
+
+  .header-nav-full-width {
+    grid-column: 1/ 3; /* sets the home menu item to 4 grid columns wide */
+  }
+
+  .one-column {
+    grid-template-columns: 1fr;
+  }
+  .two-column {
+    grid-template-columns: 1fr 1fr;
+  }
+  .three-column {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .four-column {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 22px;
+  }
+}
+/* super large devices (large laptops and desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+  html {
+    font-size: 26px;
+  }
+}
